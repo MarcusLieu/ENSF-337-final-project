@@ -1,10 +1,9 @@
-#include <iostream>
-#include <vector>
-#include <string>
+#ifndef MY_FLIGHT_CLASS
+#define MY_FLIGHT_CLASS
 
+#include <vector>
 using namespace std;
 
-class Airline {};
 class Flight {
 public:
 
@@ -13,19 +12,7 @@ private:
     int rows;
     int col;
 };
-class Passenger {
-public:
 
-private:
 
-};
-class seat {
-public:
-    int get_row() const {return seat_row;}
-    char get_col() const {return seat_col;}
-    void set_row(int r) {seat_row = r;}
-    void set_col(char c) {seat_col = c;}
-private:
-    int seat_row;
-    char seat_col;
-};
+
+#endif
