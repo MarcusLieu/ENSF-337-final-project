@@ -36,7 +36,7 @@ class Passenger {
         void set_phone_num(string num);
         
         const int get_ID() const {return ID };
-        const string get_Fname() const;
-        const string get_Lname() const;
-        const string get_phone_num() const;
+        const string get_Fname() const {return Fname};
+        const string get_Lname() const {return Lname};
+        const string get_phone_num() const {return phone_num};
 };
