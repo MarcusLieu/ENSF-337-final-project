@@ -14,7 +14,20 @@ Passenger::Passenger(int id, string first_n, string last_n, string phone, seat *
     seat_ptr = seat;
 }
 
-Passenger::~Passenger(){
 
+Passenger::set_Fname(string name) {
+    Fname = name;
+}
+
+Passenger::set_Lname(string name) {
+    Lname = name;
+}
+
+Passenger::set_phone_num(string num){
+    phone_num = num;
+}
+
+Passenger::set_ID(int id) {
+    ID = id;
 }
 

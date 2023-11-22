@@ -10,28 +10,30 @@
     or like... th actual passenger class has a pointer of type Passenger, 
     so it can point to the next passenger, etc... ?
 */
+struct Node {
+    Passenger item;
+    Node * next;
+}
 
 class Passenger {
     private:
-        int ID;
+        int ID; //P_ID
         string Fname;
         string Lname;
         string phone_num; 
-        Passenger * next; // like th enext ptr in a linked list 
-        Passenger * prev;
         seat * seat_ptr;
 
     public:
         Passenger(); //default c-tor
-        Passenger(int id, string first_n, string last_n, string phone, seat * seat); // c-tor
-        ~Passenger(); //d-tor
-        Passenger(const Passenger & src); //copy c-tor
-        Passenger & operator=(const Passenger & rhs); //asn op
+        Passenger(int id, string first_n, string last_n, string phone, seat * seat); // c-tor MIGHT BNOT NEED THIS 
+        ~Passenger(); //d-tor MIGHT NOT NEED THIS 
+        Passenger(const Passenger & src); //copy c-tor MIGHT BNOT NEED THIS
+        Passenger & operator=(const Passenger & rhs); //asn op MIGHT NOT NEED THIS 
 
-        void set_Fname(const char *);
-        void set_Lname(const char *);
+        void set_Fname(string name);
+        void set_Lname(string name);
         void set_ID(int id) {ID = id};
-        void set_phone_num(const char *);
+        void set_phone_num(string num);
         
         const int get_ID() const {return ID };
         const string get_Fname() const;
