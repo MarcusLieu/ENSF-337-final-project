@@ -9,9 +9,11 @@ public:
     char get_col() const {return seat_col;}
     void set_row(int r) {seat_row = r;}
     void set_col(char c) {seat_col = c;}
+    void set_taken(bool t) {taken = t;}
 private:
     int seat_row;
     char seat_col;
+    bool taken;
 };
 
 #endif
