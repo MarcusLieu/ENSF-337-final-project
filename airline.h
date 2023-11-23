@@ -2,5 +2,17 @@
 #define MY_AIRLINE_CLASS
 using namespace std;
 
-class Airline {};
+#include "string"
+#include "vector"
+class Airline {
+    private:
+        string name;
+        vector<Flight>flight;
+        int num_flights;
+
+
+    public:
+
+
+};
 #endif
