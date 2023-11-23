@@ -10,10 +10,6 @@
     or like... th actual passenger class has a pointer of type Passenger, 
     so it can point to the next passenger, etc... ?
 */
-struct Node {
-    Passenger item;
-    Node * next;
-}
 
 class Passenger {
     private:
@@ -26,9 +22,8 @@ class Passenger {
     public:
         Passenger(); //default c-tor
         Passenger(int id, string first_n, string last_n, string phone, seat * seat); // c-tor MIGHT BNOT NEED THIS 
-        ~Passenger(); //d-tor MIGHT NOT NEED THIS 
-        Passenger(const Passenger & src); //copy c-tor MIGHT BNOT NEED THIS
-        Passenger & operator=(const Passenger & rhs); //asn op MIGHT NOT NEED THIS 
+        //Passenger(const Passenger & src); //copy c-tor MIGHT BNOT NEED THIS
+        //Passenger & operator=(const Passenger & rhs); //asn op MIGHT NOT NEED THIS 
 
         void set_Fname(string name);
         void set_Lname(string name);
