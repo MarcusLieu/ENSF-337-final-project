@@ -1,3 +1,5 @@
+#include "passenger_class.h"
+
 Passenger::Passenger(){
     Fname = '\0';
     Lname = '\0';
