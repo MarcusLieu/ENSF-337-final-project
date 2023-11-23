@@ -10,6 +10,7 @@ public:
     void set_row(int r) {seat_row = r;}
     void set_col(char c) {seat_col = c;}
     void set_taken(bool t) {taken = t;}
+    bool get_taken() {return taken;}
 private:
     int seat_row;
     char seat_col;
