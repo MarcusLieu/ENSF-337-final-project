@@ -12,10 +12,6 @@ using namespace std;
 need thi sline at some point?
 ifstream in("flights.txt");
 */
-struct Node {
-    Passenger * item;
-    Node * next;
-}
 
 class flight {
     private:
@@ -24,14 +20,15 @@ class flight {
         int num_cols;
         Node * headm;
         vector < vector < seats >> seat_map; //check
-        vector < vector < Passenger >> passenger_list;
+        vector < Passenger > passenger_list;
+       
 
     public:
         int menu();
         void populate_flight(char * file);
         const void displayHeader() const;
-        const void add_pass(const int P_ID);
-        const void remove_pass(const int P_ID);
+        const void add_pass(const Passenger &);
+        const void remove_pass(const Passenger &);
 
         const void set_ID(int id) {flight_ID = id;}
         const void set_num_rows(int num) {num_rows = num;}
@@ -54,21 +51,34 @@ flight::populate_flight(char * file){
     }
 }
 
-flight::add_pass(const Passenger & person){ //idk lol
-    Node * new_node = new Node;
-    new_node -> item = person;
-
-
+const void flight::add_pass(const Passenger & person){ //idk lol
+    for (int i = 0; i < passenger_list.size(); i++){
+        if (passenger_list[i].ID < person.ID) {
+            continue;
+        }
+        else {
+            passenger_list.insert(i, person);
+            break;
+        }
+    }
 }
 
-flight::set_seat_map(){
+const void flight::remove_pass(const Passenger & person) {
+    for (int i = 0; i < passenger_list.size(); i++){
+        if (passenger_list[i].ID == person.ID) {
+            passenger_list.erase(i);
+            break;
+        }
+    }
+}
+
+void flight::set_seat_map(){
     seat_map.resize(num_rows);
     for(int i = 0; i < num_rows; i++){
         seat_map[i].resize(num_cols);
-    }
-    
-    
+    }    
 }
+
 int menu(){
     int choice = -1;
     cout << "Please select one of the following options: \n";
