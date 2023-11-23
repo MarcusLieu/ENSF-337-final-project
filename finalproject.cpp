@@ -18,5 +18,15 @@ int menu() {
 }
 
 int main(void) {
-    
+    int choice = 1;
+    while (choice != 0) {
+        switch(menu()) {
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+            case 6:
+        }
+    }
 }
